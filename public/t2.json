@@ -1,0 +1,199 @@
+{
+	"pattern": "functionDefinitionCode",
+	"record": {
+		"body": {
+			"record": {
+				"containedStatements": [{
+						"pattern": "variableDeclaration",
+						"record": {
+							"initializer?": {
+								"pattern": "expressionInitializer",
+								"record": {
+									"expression": {
+										"pattern": "intLiteral",
+										"record": {
+											"base": "decimal",
+											"hasUSuffix": false,
+											"isImplicit": false,
+											"isLowerCaseSuffix": false,
+											"isLowercaseLSuffix": false,
+											"isParenthesized": false,
+											"llSuffix?": null,
+											"location": "6:2:13",
+											"macrosExpandedFrom": [],
+											"macrosExpansionsPresent": [],
+											"type": {
+												"pattern": "intType",
+												"record": {
+													"alignmentInBytes": 4,
+													"isSigned": true,
+													"kind": "int",
+													"sizeInBits": 32,
+													"sizeInBytes": 4
+												}
+											},
+											"value": 0
+										}
+									},
+									"isImplicit": false,
+									"location": "6:2:5",
+									"macrosExpandedFrom": [],
+									"macrosExpansionsPresent": [],
+									"syntaxKind": "copy"
+								}
+							},
+							"isImplicit": false,
+							"kind": "simple",
+							"location": "6:2:5",
+							"macrosExpandedFrom": [],
+							"macrosExpansionsPresent": [],
+							"variable": {
+								"record": {
+									"access": "public",
+									"alignmentInBytes?": 4,
+									"hasImplicitSize": false,
+									"identifier?": "i",
+									"isAlignmentAssigned": false,
+									"isCUDAConstant": false,
+									"isCUDAManaged": false,
+									"isCUDAShared": false,
+									"isClassStatic": false,
+									"isCompilerGenerated": false,
+									"isConstexpr": false,
+									"isExternC": false,
+									"isExternalLinkage": true,
+									"isFinalOrReadOnly": false,
+									"isFunctionStatic": false,
+									"isStaticMember": false,
+									"isStaticScope": false,
+									"isStrictfp": false,
+									"isSynchronized": false,
+									"isTransient": false,
+									"isVMVolatile": false,
+									"isVolatile": false,
+									"language": "C++",
+									"location": "6:2:9",
+									"mangledName?": "i",
+									"ownerClass?": null,
+									"scope": "local",
+									"scopeList": [],
+									"type": {
+										"pattern": "intType",
+										"record": {
+											"alignmentInBytes": 4,
+											"isSigned": true,
+											"kind": "int",
+											"sizeInBits": 32,
+											"sizeInBytes": 4
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"pattern": "returnStatement",
+						"record": {
+							"isImplicit": true,
+							"isVoid": true,
+							"location": "6:3:1",
+							"macrosExpandedFrom": [],
+							"macrosExpansionsPresent": [],
+							"returnedExpression?": null
+						}
+					}
+				],
+				"isImplicit": false,
+				"location": "6:1:14",
+				"macrosExpandedFrom": [],
+				"macrosExpansionsPresent": []
+			}
+		},
+		"constructorInitializerList?": null,
+		"formalParameterList": [],
+		"functionSymbol": {
+			"record": {
+				"access": "public",
+				"doesNotReturn": false,
+				"explicitParameterCount": 0,
+				"functionType": {
+					"record": {
+						"declaredThrownTypeList?": null,
+						"doesNotReturn": false,
+						"hasEllipsis": false,
+						"hasImplicitExnSpec": false,
+						"hasNoExcept": false,
+						"isMemberFunction": false,
+						"isPrototyped": true,
+						"paramTypeList": [],
+						"returnType": {
+							"pattern": "voidType"
+						}
+					}
+				},
+				"hasThis": false,
+				"identifier?": "f",
+				"isAlignmentAssigned": false,
+				"isCUDAGlobal": false,
+				"isCompilerGenerated": false,
+				"isConstMethod": false,
+				"isConstexpr": false,
+				"isConstructor": false,
+				"isConversionOperator": false,
+				"isDefaulted": false,
+				"isDeleted": false,
+				"isDestructor": false,
+				"isExplicitConstructor": false,
+				"isExplicitConversionOperator": false,
+				"isExplicitlyDefaulted": false,
+				"isExplicitlyDeleted": false,
+				"isExternC": false,
+				"isExternalLinkage": true,
+				"isFinalOrReadOnly": false,
+				"isImplicitConversionOperator": false,
+				"isInline": false,
+				"isNonstaticMethod": false,
+				"isOverride": false,
+				"isPureVirtual": false,
+				"isStaticMember": false,
+				"isStaticMethod": false,
+				"isStaticScope": false,
+				"isStrictfp": false,
+				"isSynchronized": false,
+				"isTemplate": false,
+				"isTemplateOrInTemplateClass": false,
+				"isTrailingReturnType": false,
+				"isTransient": false,
+				"isVMVolatile": false,
+				"isVirtual": false,
+				"isVolatile": false,
+				"language": "C++",
+				"location": "DeclLoc(\"f()\")",
+				"mangledName?": "_Z1fv",
+				"methodQualifierList": [],
+				"ownerClass?": null,
+				"scopeList": [],
+				"specialMethodKind": "None",
+				"type": {
+					"pattern": "functionType",
+					"record": {
+						"declaredThrownTypeList?": null,
+						"doesNotReturn": false,
+						"hasEllipsis": false,
+						"hasImplicitExnSpec": false,
+						"hasNoExcept": false,
+						"isMemberFunction": false,
+						"isPrototyped": true,
+						"paramTypeList": [],
+						"returnType": {
+							"pattern": "voidType"
+						}
+					}
+				}
+			}
+		},
+		"functionTryCatchBlockList?": null,
+		"isInSystemHeader": false,
+		"location": "6:1:6"
+	}
+}

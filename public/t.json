@@ -1,0 +1,1353 @@
+/*
+ * Matching function: f() /*_Z1fv*/
+ * declared at:
+ *   /remote/cn58home1/yuchenw/ast-json/t.cpp:1:6-/remote/cn58home1/yuchenw/ast-json/t.cpp:1:6
+ * defined in TU 1 with row 1
+ */
+{
+  "pattern" : "functionDefinitionCode",
+  "record" : {
+    "body" : {
+      "record" : {
+        "containedStatements" : [
+          {
+            "pattern" : "variableDeclaration",
+            "record" : {
+              "initializer?" : {
+                "pattern" : "expressionInitializer",
+                "record" : {
+                  "expression" : {
+                    "pattern" : "intLiteral",
+                    "record" : {
+                      "base" : "decimal",
+                      "hasUSuffix" : false,
+                      "isImplicit" : false,
+                      "isLowerCaseSuffix" : false,
+                      "isLowercaseLSuffix" : false,
+                      "isParenthesized" : false,
+                      "llSuffix?" : null,
+                      "location" : "6:2:13",
+                      "macrosExpandedFrom" : [],
+                      "macrosExpansionsPresent" : [],
+                      "type" : {
+                        "pattern" : "intType",
+                        "record" : {
+                          "alignmentInBytes" : 4,
+                          "isSigned" : true,
+                          "kind" : "int",
+                          "sizeInBits" : 32,
+                          "sizeInBytes" : 4
+                        }
+                      },
+                      "value" : 0
+                    }
+                  },
+                  "isImplicit" : false,
+                  "location" : "6:2:5",
+                  "macrosExpandedFrom" : [],
+                  "macrosExpansionsPresent" : [],
+                  "syntaxKind" : "copy"
+                }
+              },
+              "isImplicit" : false,
+              "kind" : "simple",
+              "location" : "6:2:5",
+              "macrosExpandedFrom" : [],
+              "macrosExpansionsPresent" : [],
+              "variable" : {
+                "record" : {
+                  "access" : "public",
+                  "alignmentInBytes?" : 4,
+                  "hasImplicitSize" : false,
+                  "identifier?" : "i",
+                  "isAlignmentAssigned" : false,
+                  "isCUDAConstant" : false,
+                  "isCUDAManaged" : false,
+                  "isCUDAShared" : false,
+                  "isClassStatic" : false,
+                  "isCompilerGenerated" : false,
+                  "isConstexpr" : false,
+                  "isExternC" : false,
+                  "isExternalLinkage" : true,
+                  "isFinalOrReadOnly" : false,
+                  "isFunctionStatic" : false,
+                  "isStaticMember" : false,
+                  "isStaticScope" : false,
+                  "isStrictfp" : false,
+                  "isSynchronized" : false,
+                  "isTransient" : false,
+                  "isVMVolatile" : false,
+                  "isVolatile" : false,
+                  "language" : "C++",
+                  "location" : "6:2:9",
+                  "mangledName?" : "i",
+                  "ownerClass?" : null,
+                  "scope" : "local",
+                  "scopeList" : [],
+                  "type" : {
+                    "pattern" : "intType",
+                    "record" : {
+                      "alignmentInBytes" : 4,
+                      "isSigned" : true,
+                      "kind" : "int",
+                      "sizeInBits" : 32,
+                      "sizeInBytes" : 4
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "pattern" : "returnStatement",
+            "record" : {
+              "isImplicit" : true,
+              "isVoid" : true,
+              "location" : "6:3:1",
+              "macrosExpandedFrom" : [],
+              "macrosExpansionsPresent" : [],
+              "returnedExpression?" : null
+            }
+          }
+        ],
+        "isImplicit" : false,
+        "location" : "6:1:14",
+        "macrosExpandedFrom" : [],
+        "macrosExpansionsPresent" : []
+      }
+    },
+    "constructorInitializerList?" : null,
+    "formalParameterList" : [],
+    "functionSymbol" : {
+      "record" : {
+        "access" : "public",
+        "doesNotReturn" : false,
+        "explicitParameterCount" : 0,
+        "functionType" : {
+          "record" : {
+            "declaredThrownTypeList?" : null,
+            "doesNotReturn" : false,
+            "hasEllipsis" : false,
+            "hasImplicitExnSpec" : false,
+            "hasNoExcept" : false,
+            "isMemberFunction" : false,
+            "isPrototyped" : true,
+            "paramTypeList" : [],
+            "returnType" : {
+              "pattern" : "voidType"
+            }
+          }
+        },
+        "hasThis" : false,
+        "identifier?" : "f",
+        "isAlignmentAssigned" : false,
+        "isCUDAGlobal" : false,
+        "isCompilerGenerated" : false,
+        "isConstMethod" : false,
+        "isConstexpr" : false,
+        "isConstructor" : false,
+        "isConversionOperator" : false,
+        "isDefaulted" : false,
+        "isDeleted" : false,
+        "isDestructor" : false,
+        "isExplicitConstructor" : false,
+        "isExplicitConversionOperator" : false,
+        "isExplicitlyDefaulted" : false,
+        "isExplicitlyDeleted" : false,
+        "isExternC" : false,
+        "isExternalLinkage" : true,
+        "isFinalOrReadOnly" : false,
+        "isImplicitConversionOperator" : false,
+        "isInline" : false,
+        "isNonstaticMethod" : false,
+        "isOverride" : false,
+        "isPureVirtual" : false,
+        "isStaticMember" : false,
+        "isStaticMethod" : false,
+        "isStaticScope" : false,
+        "isStrictfp" : false,
+        "isSynchronized" : false,
+        "isTemplate" : false,
+        "isTemplateOrInTemplateClass" : false,
+        "isTrailingReturnType" : false,
+        "isTransient" : false,
+        "isVMVolatile" : false,
+        "isVirtual" : false,
+        "isVolatile" : false,
+        "language" : "C++",
+        "location" : "DeclLoc(\"f()\")",
+        "mangledName?" : "_Z1fv",
+        "methodQualifierList" : [],
+        "ownerClass?" : null,
+        "scopeList" : [],
+        "specialMethodKind" : "None",
+        "type" : {
+          "pattern" : "functionType",
+          "record" : {
+            "declaredThrownTypeList?" : null,
+            "doesNotReturn" : false,
+            "hasEllipsis" : false,
+            "hasImplicitExnSpec" : false,
+            "hasNoExcept" : false,
+            "isMemberFunction" : false,
+            "isPrototyped" : true,
+            "paramTypeList" : [],
+            "returnType" : {
+              "pattern" : "voidType"
+            }
+          }
+        }
+      }
+    },
+    "functionTryCatchBlockList?" : null,
+    "isInSystemHeader" : false,
+    "location" : "6:1:6"
+  }
+}
+/*
+ * Matching class: C
+ * declared at:
+ *   /remote/cn58home1/yuchenw/ast-json/t.cpp:5:7-/remote/cn58home1/yuchenw/ast-json/t.cpp:5:7
+ * defined in TU 1 with row 1
+ */
+{
+  "pattern" : "iteratedClassDefinitionCode",
+  "record" : {
+    "byteSize" : 8,
+    "declaredType" : {
+      "record" : {
+        "access" : "public",
+        "alignmentInBytes?" : 8,
+        "identifier?" : "C",
+        "isAlignmentAssigned" : false,
+        "isAnonymous" : false,
+        "isComplete" : true,
+        "isLambda" : false,
+        "kind" : "class",
+        "location" : "DeclLoc(C)",
+        "mangledName" : "C",
+        "scopeList" : [],
+        "sizeInBytes?" : 8
+      }
+    },
+    "fieldList" : [
+      {
+        "record" : {
+          "access" : "private",
+          "alignmentInBytes?" : 8,
+          "bitOffset" : 0,
+          "bitWidth?" : null,
+          "hasInitializer" : false,
+          "identifier?" : "p",
+          "isAlignmentAssigned" : false,
+          "isAnonymous" : false,
+          "isBitField" : false,
+          "isClassStatic" : false,
+          "isCompilerGenerated" : false,
+          "isExplicitLambdaCapture" : false,
+          "isExternC" : false,
+          "isExternalLinkage" : true,
+          "isFinalOrReadOnly" : false,
+          "isSignedBitField" : false,
+          "isStaticMember" : false,
+          "isStaticScope" : false,
+          "isStrictfp" : false,
+          "isSynchronized" : false,
+          "isTransient" : false,
+          "isVMVolatile" : false,
+          "isVolatile" : false,
+          "language" : "C++",
+          "location" : "DeclLoc(\"p\")",
+          "mangledName?" : "p",
+          "offset" : 0,
+          "ownerClass?" : {
+            "pattern" : "classType",
+            "record" : {
+              "access" : "public",
+              "alignmentInBytes?" : 8,
+              "identifier?" : "C",
+              "isAlignmentAssigned" : false,
+              "isAnonymous" : false,
+              "isComplete" : true,
+              "isLambda" : false,
+              "kind" : "class",
+              "location" : "DeclLoc(C)",
+              "mangledName" : "C",
+              "scopeList" : [],
+              "sizeInBytes?" : 8
+            }
+          },
+          "scopeList" : [
+            "C"
+          ],
+          "type" : {
+            "pattern" : "pointerType",
+            "record" : {
+              "alignmentInBytes" : 8,
+              "pointerToType" : {
+                "pattern" : "charType",
+                "record" : {
+                  "alignmentInBytes" : 1,
+                  "isExplicitlySigned" : false,
+                  "isSigned" : true,
+                  "kind" : "char",
+                  "sizeInBits" : 8,
+                  "sizeInBytes" : 1
+                }
+              },
+              "sizeInBytes" : 8
+            }
+          }
+        }
+      }
+    ],
+    "instantiatedFrom?" : null,
+    "isFinal" : false,
+    "isInSystemHeader" : false,
+    "isPOD" : false,
+    "isStandardLayout" : true,
+    "isTriviallyCopyable" : true,
+    "isTriviallyDefaultConstructible" : false,
+    "isTriviallyDestructible" : true,
+    "location" : "DeclLoc(C)",
+    "memberFunctionList" : [
+      {
+        "record" : {
+          "access" : "public",
+          "doesNotReturn" : false,
+          "explicitParameterCount" : 1,
+          "functionType" : {
+            "record" : {
+              "declaredThrownTypeList?" : null,
+              "doesNotReturn" : false,
+              "hasEllipsis" : false,
+              "hasImplicitExnSpec" : false,
+              "hasNoExcept" : false,
+              "isMemberFunction" : true,
+              "isPrototyped" : true,
+              "paramTypeList" : [
+                {
+                  "pattern" : "pointerType",
+                  "record" : {
+                    "alignmentInBytes" : 8,
+                    "pointerToType" : {
+                      "pattern" : "classType",
+                      "record" : {
+                        "access" : "public",
+                        "alignmentInBytes?" : 8,
+                        "identifier?" : "C",
+                        "isAlignmentAssigned" : false,
+                        "isAnonymous" : false,
+                        "isComplete" : true,
+                        "isLambda" : false,
+                        "kind" : "class",
+                        "location" : "DeclLoc(C)",
+                        "mangledName" : "C",
+                        "scopeList" : [],
+                        "sizeInBytes?" : 8
+                      }
+                    },
+                    "sizeInBytes" : 8
+                  }
+                },
+                {
+                  "pattern" : "referenceType",
+                  "record" : {
+                    "alignmentInBytes" : 8,
+                    "kind" : "lvalue",
+                    "referenceOfType" : {
+                      "pattern" : "typeQualifier",
+                      "record" : {
+                        "qualifierList" : [
+                          "const"
+                        ],
+                        "targetType" : {
+                          "pattern" : "classType",
+                          "record" : {
+                            "access" : "public",
+                            "alignmentInBytes?" : 8,
+                            "identifier?" : "C",
+                            "isAlignmentAssigned" : false,
+                            "isAnonymous" : false,
+                            "isComplete" : true,
+                            "isLambda" : false,
+                            "kind" : "class",
+                            "location" : "DeclLoc(C)",
+                            "mangledName" : "C",
+                            "scopeList" : [],
+                            "sizeInBytes?" : 8
+                          }
+                        }
+                      }
+                    },
+                    "sizeInBytes" : 8
+                  }
+                }
+              ],
+              "returnType" : {
+                "pattern" : "referenceType",
+                "record" : {
+                  "alignmentInBytes" : 8,
+                  "kind" : "lvalue",
+                  "referenceOfType" : {
+                    "pattern" : "classType",
+                    "record" : {
+                      "access" : "public",
+                      "alignmentInBytes?" : 8,
+                      "identifier?" : "C",
+                      "isAlignmentAssigned" : false,
+                      "isAnonymous" : false,
+                      "isComplete" : true,
+                      "isLambda" : false,
+                      "kind" : "class",
+                      "location" : "DeclLoc(C)",
+                      "mangledName" : "C",
+                      "scopeList" : [],
+                      "sizeInBytes?" : 8
+                    }
+                  },
+                  "sizeInBytes" : 8
+                }
+              }
+            }
+          },
+          "hasThis" : true,
+          "identifier?" : "operator =",
+          "isAlignmentAssigned" : false,
+          "isCUDAGlobal" : false,
+          "isCompilerGenerated" : true,
+          "isConstMethod" : false,
+          "isConstexpr" : false,
+          "isConstructor" : false,
+          "isConversionOperator" : false,
+          "isDefaulted" : true,
+          "isDeleted" : false,
+          "isDestructor" : false,
+          "isExplicitConstructor" : false,
+          "isExplicitConversionOperator" : false,
+          "isExplicitlyDefaulted" : false,
+          "isExplicitlyDeleted" : false,
+          "isExternC" : false,
+          "isExternalLinkage" : true,
+          "isFinalOrReadOnly" : false,
+          "isImplicitConversionOperator" : false,
+          "isInline" : true,
+          "isNonstaticMethod" : true,
+          "isOverride" : false,
+          "isPureVirtual" : false,
+          "isStaticMember" : false,
+          "isStaticMethod" : false,
+          "isStaticScope" : false,
+          "isStrictfp" : false,
+          "isSynchronized" : false,
+          "isTemplate" : false,
+          "isTemplateOrInTemplateClass" : false,
+          "isTrailingReturnType" : false,
+          "isTransient" : false,
+          "isVMVolatile" : false,
+          "isVirtual" : false,
+          "isVolatile" : false,
+          "language" : "C++",
+          "location" : "DeclLoc(\"C::operator =(C const &) /*implicit =default*/\")",
+          "mangledName?" : "_ZN1CaSERKS_",
+          "methodQualifierList" : [],
+          "ownerClass?" : {
+            "pattern" : "classType",
+            "record" : {
+              "access" : "public",
+              "alignmentInBytes?" : 8,
+              "identifier?" : "C",
+              "isAlignmentAssigned" : false,
+              "isAnonymous" : false,
+              "isComplete" : true,
+              "isLambda" : false,
+              "kind" : "class",
+              "location" : "DeclLoc(C)",
+              "mangledName" : "C",
+              "scopeList" : [],
+              "sizeInBytes?" : 8
+            }
+          },
+          "scopeList" : [
+            "C"
+          ],
+          "specialMethodKind" : "CopyAssignment",
+          "type" : {
+            "pattern" : "functionType",
+            "record" : {
+              "declaredThrownTypeList?" : null,
+              "doesNotReturn" : false,
+              "hasEllipsis" : false,
+              "hasImplicitExnSpec" : false,
+              "hasNoExcept" : false,
+              "isMemberFunction" : true,
+              "isPrototyped" : true,
+              "paramTypeList" : [
+                {
+                  "pattern" : "pointerType",
+                  "record" : {
+                    "alignmentInBytes" : 8,
+                    "pointerToType" : {
+                      "pattern" : "classType",
+                      "record" : {
+                        "access" : "public",
+                        "alignmentInBytes?" : 8,
+                        "identifier?" : "C",
+                        "isAlignmentAssigned" : false,
+                        "isAnonymous" : false,
+                        "isComplete" : true,
+                        "isLambda" : false,
+                        "kind" : "class",
+                        "location" : "DeclLoc(C)",
+                        "mangledName" : "C",
+                        "scopeList" : [],
+                        "sizeInBytes?" : 8
+                      }
+                    },
+                    "sizeInBytes" : 8
+                  }
+                },
+                {
+                  "pattern" : "referenceType",
+                  "record" : {
+                    "alignmentInBytes" : 8,
+                    "kind" : "lvalue",
+                    "referenceOfType" : {
+                      "pattern" : "typeQualifier",
+                      "record" : {
+                        "qualifierList" : [
+                          "const"
+                        ],
+                        "targetType" : {
+                          "pattern" : "classType",
+                          "record" : {
+                            "access" : "public",
+                            "alignmentInBytes?" : 8,
+                            "identifier?" : "C",
+                            "isAlignmentAssigned" : false,
+                            "isAnonymous" : false,
+                            "isComplete" : true,
+                            "isLambda" : false,
+                            "kind" : "class",
+                            "location" : "DeclLoc(C)",
+                            "mangledName" : "C",
+                            "scopeList" : [],
+                            "sizeInBytes?" : 8
+                          }
+                        }
+                      }
+                    },
+                    "sizeInBytes" : 8
+                  }
+                }
+              ],
+              "returnType" : {
+                "pattern" : "referenceType",
+                "record" : {
+                  "alignmentInBytes" : 8,
+                  "kind" : "lvalue",
+                  "referenceOfType" : {
+                    "pattern" : "classType",
+                    "record" : {
+                      "access" : "public",
+                      "alignmentInBytes?" : 8,
+                      "identifier?" : "C",
+                      "isAlignmentAssigned" : false,
+                      "isAnonymous" : false,
+                      "isComplete" : true,
+                      "isLambda" : false,
+                      "kind" : "class",
+                      "location" : "DeclLoc(C)",
+                      "mangledName" : "C",
+                      "scopeList" : [],
+                      "sizeInBytes?" : 8
+                    }
+                  },
+                  "sizeInBytes" : 8
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "record" : {
+          "access" : "public",
+          "doesNotReturn" : false,
+          "explicitParameterCount" : 0,
+          "functionType" : {
+            "record" : {
+              "declaredThrownTypeList?" : null,
+              "doesNotReturn" : false,
+              "hasEllipsis" : false,
+              "hasImplicitExnSpec" : false,
+              "hasNoExcept" : false,
+              "isMemberFunction" : true,
+              "isPrototyped" : true,
+              "paramTypeList" : [
+                {
+                  "pattern" : "pointerType",
+                  "record" : {
+                    "alignmentInBytes" : 8,
+                    "pointerToType" : {
+                      "pattern" : "classType",
+                      "record" : {
+                        "access" : "public",
+                        "alignmentInBytes?" : 8,
+                        "identifier?" : "C",
+                        "isAlignmentAssigned" : false,
+                        "isAnonymous" : false,
+                        "isComplete" : true,
+                        "isLambda" : false,
+                        "kind" : "class",
+                        "location" : "DeclLoc(C)",
+                        "mangledName" : "C",
+                        "scopeList" : [],
+                        "sizeInBytes?" : 8
+                      }
+                    },
+                    "sizeInBytes" : 8
+                  }
+                }
+              ],
+              "returnType" : {
+                "pattern" : "voidType"
+              }
+            }
+          },
+          "hasThis" : true,
+          "identifier?" : "C",
+          "isAlignmentAssigned" : false,
+          "isCUDAGlobal" : false,
+          "isCompilerGenerated" : false,
+          "isConstMethod" : false,
+          "isConstexpr" : false,
+          "isConstructor" : true,
+          "isConversionOperator" : false,
+          "isDefaulted" : false,
+          "isDeleted" : false,
+          "isDestructor" : false,
+          "isExplicitConstructor" : false,
+          "isExplicitConversionOperator" : false,
+          "isExplicitlyDefaulted" : false,
+          "isExplicitlyDeleted" : false,
+          "isExternC" : false,
+          "isExternalLinkage" : true,
+          "isFinalOrReadOnly" : false,
+          "isImplicitConversionOperator" : false,
+          "isInline" : true,
+          "isNonstaticMethod" : true,
+          "isOverride" : false,
+          "isPureVirtual" : false,
+          "isStaticMember" : false,
+          "isStaticMethod" : false,
+          "isStaticScope" : false,
+          "isStrictfp" : false,
+          "isSynchronized" : false,
+          "isTemplate" : false,
+          "isTemplateOrInTemplateClass" : false,
+          "isTrailingReturnType" : false,
+          "isTransient" : false,
+          "isVMVolatile" : false,
+          "isVirtual" : false,
+          "isVolatile" : false,
+          "language" : "C++",
+          "location" : "DeclLoc(\"C::C()\")",
+          "mangledName?" : "_ZN1CC9Ev",
+          "methodQualifierList" : [],
+          "ownerClass?" : {
+            "pattern" : "classType",
+            "record" : {
+              "access" : "public",
+              "alignmentInBytes?" : 8,
+              "identifier?" : "C",
+              "isAlignmentAssigned" : false,
+              "isAnonymous" : false,
+              "isComplete" : true,
+              "isLambda" : false,
+              "kind" : "class",
+              "location" : "DeclLoc(C)",
+              "mangledName" : "C",
+              "scopeList" : [],
+              "sizeInBytes?" : 8
+            }
+          },
+          "scopeList" : [
+            "C"
+          ],
+          "specialMethodKind" : "DefaultConstructor",
+          "type" : {
+            "pattern" : "functionType",
+            "record" : {
+              "declaredThrownTypeList?" : null,
+              "doesNotReturn" : false,
+              "hasEllipsis" : false,
+              "hasImplicitExnSpec" : false,
+              "hasNoExcept" : false,
+              "isMemberFunction" : true,
+              "isPrototyped" : true,
+              "paramTypeList" : [
+                {
+                  "pattern" : "pointerType",
+                  "record" : {
+                    "alignmentInBytes" : 8,
+                    "pointerToType" : {
+                      "pattern" : "classType",
+                      "record" : {
+                        "access" : "public",
+                        "alignmentInBytes?" : 8,
+                        "identifier?" : "C",
+                        "isAlignmentAssigned" : false,
+                        "isAnonymous" : false,
+                        "isComplete" : true,
+                        "isLambda" : false,
+                        "kind" : "class",
+                        "location" : "DeclLoc(C)",
+                        "mangledName" : "C",
+                        "scopeList" : [],
+                        "sizeInBytes?" : 8
+                      }
+                    },
+                    "sizeInBytes" : 8
+                  }
+                }
+              ],
+              "returnType" : {
+                "pattern" : "voidType"
+              }
+            }
+          }
+        }
+      },
+      {
+        "record" : {
+          "access" : "public",
+          "doesNotReturn" : false,
+          "explicitParameterCount" : 1,
+          "functionType" : {
+            "record" : {
+              "declaredThrownTypeList?" : null,
+              "doesNotReturn" : false,
+              "hasEllipsis" : false,
+              "hasImplicitExnSpec" : false,
+              "hasNoExcept" : false,
+              "isMemberFunction" : true,
+              "isPrototyped" : true,
+              "paramTypeList" : [
+                {
+                  "pattern" : "pointerType",
+                  "record" : {
+                    "alignmentInBytes" : 8,
+                    "pointerToType" : {
+                      "pattern" : "classType",
+                      "record" : {
+                        "access" : "public",
+                        "alignmentInBytes?" : 8,
+                        "identifier?" : "C",
+                        "isAlignmentAssigned" : false,
+                        "isAnonymous" : false,
+                        "isComplete" : true,
+                        "isLambda" : false,
+                        "kind" : "class",
+                        "location" : "DeclLoc(C)",
+                        "mangledName" : "C",
+                        "scopeList" : [],
+                        "sizeInBytes?" : 8
+                      }
+                    },
+                    "sizeInBytes" : 8
+                  }
+                },
+                {
+                  "pattern" : "referenceType",
+                  "record" : {
+                    "alignmentInBytes" : 8,
+                    "kind" : "lvalue",
+                    "referenceOfType" : {
+                      "pattern" : "typeQualifier",
+                      "record" : {
+                        "qualifierList" : [
+                          "const"
+                        ],
+                        "targetType" : {
+                          "pattern" : "classType",
+                          "record" : {
+                            "access" : "public",
+                            "alignmentInBytes?" : 8,
+                            "identifier?" : "C",
+                            "isAlignmentAssigned" : false,
+                            "isAnonymous" : false,
+                            "isComplete" : true,
+                            "isLambda" : false,
+                            "kind" : "class",
+                            "location" : "DeclLoc(C)",
+                            "mangledName" : "C",
+                            "scopeList" : [],
+                            "sizeInBytes?" : 8
+                          }
+                        }
+                      }
+                    },
+                    "sizeInBytes" : 8
+                  }
+                }
+              ],
+              "returnType" : {
+                "pattern" : "voidType"
+              }
+            }
+          },
+          "hasThis" : true,
+          "identifier?" : "C",
+          "isAlignmentAssigned" : false,
+          "isCUDAGlobal" : false,
+          "isCompilerGenerated" : true,
+          "isConstMethod" : false,
+          "isConstexpr" : false,
+          "isConstructor" : true,
+          "isConversionOperator" : false,
+          "isDefaulted" : true,
+          "isDeleted" : false,
+          "isDestructor" : false,
+          "isExplicitConstructor" : false,
+          "isExplicitConversionOperator" : false,
+          "isExplicitlyDefaulted" : false,
+          "isExplicitlyDeleted" : false,
+          "isExternC" : false,
+          "isExternalLinkage" : true,
+          "isFinalOrReadOnly" : false,
+          "isImplicitConversionOperator" : false,
+          "isInline" : true,
+          "isNonstaticMethod" : true,
+          "isOverride" : false,
+          "isPureVirtual" : false,
+          "isStaticMember" : false,
+          "isStaticMethod" : false,
+          "isStaticScope" : false,
+          "isStrictfp" : false,
+          "isSynchronized" : false,
+          "isTemplate" : false,
+          "isTemplateOrInTemplateClass" : false,
+          "isTrailingReturnType" : false,
+          "isTransient" : false,
+          "isVMVolatile" : false,
+          "isVirtual" : false,
+          "isVolatile" : false,
+          "language" : "C++",
+          "location" : "DeclLoc(\"C::C(C const &) /*implicit =default*/\")",
+          "mangledName?" : "_ZN1CC9ERKS_",
+          "methodQualifierList" : [],
+          "ownerClass?" : {
+            "pattern" : "classType",
+            "record" : {
+              "access" : "public",
+              "alignmentInBytes?" : 8,
+              "identifier?" : "C",
+              "isAlignmentAssigned" : false,
+              "isAnonymous" : false,
+              "isComplete" : true,
+              "isLambda" : false,
+              "kind" : "class",
+              "location" : "DeclLoc(C)",
+              "mangledName" : "C",
+              "scopeList" : [],
+              "sizeInBytes?" : 8
+            }
+          },
+          "scopeList" : [
+            "C"
+          ],
+          "specialMethodKind" : "CopyConstructor",
+          "type" : {
+            "pattern" : "functionType",
+            "record" : {
+              "declaredThrownTypeList?" : null,
+              "doesNotReturn" : false,
+              "hasEllipsis" : false,
+              "hasImplicitExnSpec" : false,
+              "hasNoExcept" : false,
+              "isMemberFunction" : true,
+              "isPrototyped" : true,
+              "paramTypeList" : [
+                {
+                  "pattern" : "pointerType",
+                  "record" : {
+                    "alignmentInBytes" : 8,
+                    "pointerToType" : {
+                      "pattern" : "classType",
+                      "record" : {
+                        "access" : "public",
+                        "alignmentInBytes?" : 8,
+                        "identifier?" : "C",
+                        "isAlignmentAssigned" : false,
+                        "isAnonymous" : false,
+                        "isComplete" : true,
+                        "isLambda" : false,
+                        "kind" : "class",
+                        "location" : "DeclLoc(C)",
+                        "mangledName" : "C",
+                        "scopeList" : [],
+                        "sizeInBytes?" : 8
+                      }
+                    },
+                    "sizeInBytes" : 8
+                  }
+                },
+                {
+                  "pattern" : "referenceType",
+                  "record" : {
+                    "alignmentInBytes" : 8,
+                    "kind" : "lvalue",
+                    "referenceOfType" : {
+                      "pattern" : "typeQualifier",
+                      "record" : {
+                        "qualifierList" : [
+                          "const"
+                        ],
+                        "targetType" : {
+                          "pattern" : "classType",
+                          "record" : {
+                            "access" : "public",
+                            "alignmentInBytes?" : 8,
+                            "identifier?" : "C",
+                            "isAlignmentAssigned" : false,
+                            "isAnonymous" : false,
+                            "isComplete" : true,
+                            "isLambda" : false,
+                            "kind" : "class",
+                            "location" : "DeclLoc(C)",
+                            "mangledName" : "C",
+                            "scopeList" : [],
+                            "sizeInBytes?" : 8
+                          }
+                        }
+                      }
+                    },
+                    "sizeInBytes" : 8
+                  }
+                }
+              ],
+              "returnType" : {
+                "pattern" : "voidType"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "parentList" : [],
+    "specializationOf?" : null,
+    "staticFieldList" : [],
+    "staticMemberFunctionList" : []
+  }
+}
+/*
+ * Matching function: C::C() /*_ZN1CC9Ev*/
+ * declared at:
+ *   /remote/cn58home1/yuchenw/ast-json/t.cpp:7:5-/remote/cn58home1/yuchenw/ast-json/t.cpp:7:5
+ * defined in TU 1 with row 2
+ */
+{
+  "pattern" : "functionDefinitionCode",
+  "record" : {
+    "body" : {
+      "record" : {
+        "containedStatements" : [
+          {
+            "pattern" : "returnStatement",
+            "record" : {
+              "isImplicit" : true,
+              "isVoid" : true,
+              "location" : "6:7:10",
+              "macrosExpandedFrom" : [],
+              "macrosExpansionsPresent" : [],
+              "returnedExpression?" : null
+            }
+          }
+        ],
+        "isImplicit" : false,
+        "location" : "6:7:9",
+        "macrosExpandedFrom" : [],
+        "macrosExpansionsPresent" : []
+      }
+    },
+    "constructorInitializerList?" : null,
+    "formalParameterList" : [
+      {
+        "record" : {
+          "access" : "public",
+          "arrayType?" : null,
+          "declaredType" : {
+            "pattern" : "typeQualifier",
+            "record" : {
+              "qualifierList" : [
+                "const"
+              ],
+              "targetType" : {
+                "pattern" : "pointerType",
+                "record" : {
+                  "alignmentInBytes" : 8,
+                  "pointerToType" : {
+                    "pattern" : "classType",
+                    "record" : {
+                      "access" : "public",
+                      "alignmentInBytes?" : 8,
+                      "identifier?" : "C",
+                      "isAlignmentAssigned" : false,
+                      "isAnonymous" : false,
+                      "isComplete" : true,
+                      "isLambda" : false,
+                      "kind" : "class",
+                      "location" : "DeclLoc(C)",
+                      "mangledName" : "C",
+                      "scopeList" : [],
+                      "sizeInBytes?" : 8
+                    }
+                  },
+                  "sizeInBytes" : 8
+                }
+              }
+            }
+          },
+          "identifier?" : "this",
+          "isAlignmentAssigned" : false,
+          "isArray" : false,
+          "isCompilerGenerated" : false,
+          "isExternC" : false,
+          "isExternalLinkage" : true,
+          "isFinalOrReadOnly" : false,
+          "isStaticMember" : false,
+          "isStaticScope" : false,
+          "isStaticSizeArray" : false,
+          "isStrictfp" : false,
+          "isSynchronized" : false,
+          "isThis" : true,
+          "isTransient" : false,
+          "isVMVolatile" : false,
+          "isVolatile" : false,
+          "language" : "C++",
+          "location" : "6:7:5",
+          "mangledName?" : "this",
+          "ownerClass?" : null,
+          "position" : 0,
+          "scopeList" : [],
+          "type" : {
+            "pattern" : "typeQualifier",
+            "record" : {
+              "qualifierList" : [
+                "const"
+              ],
+              "targetType" : {
+                "pattern" : "pointerType",
+                "record" : {
+                  "alignmentInBytes" : 8,
+                  "pointerToType" : {
+                    "pattern" : "classType",
+                    "record" : {
+                      "access" : "public",
+                      "alignmentInBytes?" : 8,
+                      "identifier?" : "C",
+                      "isAlignmentAssigned" : false,
+                      "isAnonymous" : false,
+                      "isComplete" : true,
+                      "isLambda" : false,
+                      "kind" : "class",
+                      "location" : "DeclLoc(C)",
+                      "mangledName" : "C",
+                      "scopeList" : [],
+                      "sizeInBytes?" : 8
+                    }
+                  },
+                  "sizeInBytes" : 8
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "functionSymbol" : {
+      "record" : {
+        "access" : "public",
+        "doesNotReturn" : false,
+        "explicitParameterCount" : 0,
+        "functionType" : {
+          "record" : {
+            "declaredThrownTypeList?" : null,
+            "doesNotReturn" : false,
+            "hasEllipsis" : false,
+            "hasImplicitExnSpec" : false,
+            "hasNoExcept" : false,
+            "isMemberFunction" : true,
+            "isPrototyped" : true,
+            "paramTypeList" : [
+              {
+                "pattern" : "pointerType",
+                "record" : {
+                  "alignmentInBytes" : 8,
+                  "pointerToType" : {
+                    "pattern" : "classType",
+                    "record" : {
+                      "access" : "public",
+                      "alignmentInBytes?" : 8,
+                      "identifier?" : "C",
+                      "isAlignmentAssigned" : false,
+                      "isAnonymous" : false,
+                      "isComplete" : true,
+                      "isLambda" : false,
+                      "kind" : "class",
+                      "location" : "DeclLoc(C)",
+                      "mangledName" : "C",
+                      "scopeList" : [],
+                      "sizeInBytes?" : 8
+                    }
+                  },
+                  "sizeInBytes" : 8
+                }
+              }
+            ],
+            "returnType" : {
+              "pattern" : "voidType"
+            }
+          }
+        },
+        "hasThis" : true,
+        "identifier?" : "C",
+        "isAlignmentAssigned" : false,
+        "isCUDAGlobal" : false,
+        "isCompilerGenerated" : false,
+        "isConstMethod" : false,
+        "isConstexpr" : false,
+        "isConstructor" : true,
+        "isConversionOperator" : false,
+        "isDefaulted" : false,
+        "isDeleted" : false,
+        "isDestructor" : false,
+        "isExplicitConstructor" : false,
+        "isExplicitConversionOperator" : false,
+        "isExplicitlyDefaulted" : false,
+        "isExplicitlyDeleted" : false,
+        "isExternC" : false,
+        "isExternalLinkage" : true,
+        "isFinalOrReadOnly" : false,
+        "isImplicitConversionOperator" : false,
+        "isInline" : true,
+        "isNonstaticMethod" : true,
+        "isOverride" : false,
+        "isPureVirtual" : false,
+        "isStaticMember" : false,
+        "isStaticMethod" : false,
+        "isStaticScope" : false,
+        "isStrictfp" : false,
+        "isSynchronized" : false,
+        "isTemplate" : false,
+        "isTemplateOrInTemplateClass" : false,
+        "isTrailingReturnType" : false,
+        "isTransient" : false,
+        "isVMVolatile" : false,
+        "isVirtual" : false,
+        "isVolatile" : false,
+        "language" : "C++",
+        "location" : "DeclLoc(\"C::C()\")",
+        "mangledName?" : "_ZN1CC9Ev",
+        "methodQualifierList" : [],
+        "ownerClass?" : {
+          "pattern" : "classType",
+          "record" : {
+            "access" : "public",
+            "alignmentInBytes?" : 8,
+            "identifier?" : "C",
+            "isAlignmentAssigned" : false,
+            "isAnonymous" : false,
+            "isComplete" : true,
+            "isLambda" : false,
+            "kind" : "class",
+            "location" : "DeclLoc(C)",
+            "mangledName" : "C",
+            "scopeList" : [],
+            "sizeInBytes?" : 8
+          }
+        },
+        "scopeList" : [
+          "C"
+        ],
+        "specialMethodKind" : "DefaultConstructor",
+        "type" : {
+          "pattern" : "functionType",
+          "record" : {
+            "declaredThrownTypeList?" : null,
+            "doesNotReturn" : false,
+            "hasEllipsis" : false,
+            "hasImplicitExnSpec" : false,
+            "hasNoExcept" : false,
+            "isMemberFunction" : true,
+            "isPrototyped" : true,
+            "paramTypeList" : [
+              {
+                "pattern" : "pointerType",
+                "record" : {
+                  "alignmentInBytes" : 8,
+                  "pointerToType" : {
+                    "pattern" : "classType",
+                    "record" : {
+                      "access" : "public",
+                      "alignmentInBytes?" : 8,
+                      "identifier?" : "C",
+                      "isAlignmentAssigned" : false,
+                      "isAnonymous" : false,
+                      "isComplete" : true,
+                      "isLambda" : false,
+                      "kind" : "class",
+                      "location" : "DeclLoc(C)",
+                      "mangledName" : "C",
+                      "scopeList" : [],
+                      "sizeInBytes?" : 8
+                    }
+                  },
+                  "sizeInBytes" : 8
+                }
+              }
+            ],
+            "returnType" : {
+              "pattern" : "voidType"
+            }
+          }
+        }
+      }
+    },
+    "functionTryCatchBlockList?" : null,
+    "isInSystemHeader" : false,
+    "location" : "6:7:5"
+  }
+}
+/*
+ * Matching global: globalVar
+ * declared at:
+ *   /remote/cn58home1/yuchenw/ast-json/t.cpp:12:7-/remote/cn58home1/yuchenw/ast-json/t.cpp:12:15
+ * defined in TU 1 with row 1
+ */
+{
+  "pattern" : "variableDeclaration",
+  "record" : {
+    "initializer?" : {
+      "pattern" : "expressionInitializer",
+      "record" : {
+        "expression" : {
+          "pattern" : "foldedConstantFloat",
+          "record" : {
+            "isImplicit" : false,
+            "isParenthesized" : false,
+            "location" : "6:12:19",
+            "macrosExpandedFrom" : [],
+            "macrosExpansionsPresent" : [],
+            "type" : {
+              "pattern" : "floatType",
+              "record" : {
+                "alignmentInBytes" : 4,
+                "kind" : "float",
+                "sizeInBits" : 32,
+                "sizeInBytes" : 4
+              }
+            },
+            "unfoldedExpression" : {
+              "pattern" : "castOperator",
+              "record" : {
+                "isImplicit" : false,
+                "isParenthesized" : false,
+                "kind" : "implicit",
+                "location" : "6:12:19",
+                "macrosExpandedFrom" : [],
+                "macrosExpansionsPresent" : [],
+                "operandExpression" : {
+                  "pattern" : "floatLiteral",
+                  "record" : {
+                    "isHexFloat" : false,
+                    "isImplicit" : false,
+                    "isLowercaseLSuffix" : false,
+                    "isLowercaseSuffix" : false,
+                    "isParenthesized" : false,
+                    "location" : "6:12:19",
+                    "macrosExpandedFrom" : [],
+                    "macrosExpansionsPresent" : [],
+                    "suffix?" : null,
+                    "type" : {
+                      "pattern" : "floatType",
+                      "record" : {
+                        "alignmentInBytes" : 8,
+                        "kind" : "double",
+                        "sizeInBits" : 64,
+                        "sizeInBytes" : 8
+                      }
+                    },
+                    "valueString" : "1"
+                  }
+                },
+                "type" : {
+                  "pattern" : "floatType",
+                  "record" : {
+                    "alignmentInBytes" : 4,
+                    "kind" : "float",
+                    "sizeInBits" : 32,
+                    "sizeInBytes" : 4
+                  }
+                }
+              }
+            },
+            "valueString" : "1"
+          }
+        },
+        "isImplicit" : false,
+        "location" : "6:12:7",
+        "macrosExpandedFrom" : [],
+        "macrosExpansionsPresent" : [],
+        "syntaxKind" : "copy"
+      }
+    },
+    "isImplicit" : false,
+    "kind" : "global",
+    "location" : "6:12:7",
+    "macrosExpandedFrom" : [],
+    "macrosExpansionsPresent" : [],
+    "variable" : {
+      "record" : {
+        "access" : "public",
+        "alignmentInBytes?" : 4,
+        "hasImplicitSize" : false,
+        "identifier?" : "globalVar",
+        "isAlignmentAssigned" : false,
+        "isCUDAConstant" : false,
+        "isCUDAManaged" : false,
+        "isCUDAShared" : false,
+        "isClassStatic" : false,
+        "isCompilerGenerated" : false,
+        "isConstexpr" : false,
+        "isExternC" : false,
+        "isExternalLinkage" : true,
+        "isFinalOrReadOnly" : false,
+        "isFunctionStatic" : false,
+        "isStaticMember" : false,
+        "isStaticScope" : false,
+        "isStrictfp" : false,
+        "isSynchronized" : false,
+        "isTransient" : false,
+        "isVMVolatile" : false,
+        "isVolatile" : false,
+        "language" : "C++",
+        "location" : "DeclLoc(\"globalVar\")",
+        "mangledName?" : "globalVar",
+        "ownerClass?" : null,
+        "scope" : "global",
+        "scopeList" : [],
+        "type" : {
+          "pattern" : "floatType",
+          "record" : {
+            "alignmentInBytes" : 4,
+            "kind" : "float",
+            "sizeInBits" : 32,
+            "sizeInBytes" : 4
+          }
+        }
+      }
+    }
+  }
+}

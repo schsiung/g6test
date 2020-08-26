@@ -1,345 +1,303 @@
 import G6 from '@antv/g6';
 
-const COLLAPSE_ICON = function COLLAPSE_ICON(x, y, r) {
-  return [
-    ['M', x - r, y - r],
-    ['a', r, r, 0, 1, 0, r * 2, 0],
-    ['a', r, r, 0, 1, 0, -r * 2, 0],
-    ['M', x + 2 - r, y - r],
-    ['L', x + r - 2, y - r],
-  ];
-};
-const EXPAND_ICON = function EXPAND_ICON(x, y, r) {
-  return [
-    ['M', x - r, y - r],
-    ['a', r, r, 0, 1, 0, r * 2, 0],
-    ['a', r, r, 0, 1, 0, -r * 2, 0],
-    ['M', x + 2 - r, y - r],
-    ['L', x + r - 2, y - r],
-    ['M', x, y - 2 * r + 2],
-    ['L', x, y - 2],
-  ];
-};
 
-const data = {
-  id: 'root',
-  label: 'root',
-  children: [
-    {
-      id: 'c1',
-      label: 'c1',
-      children: [
-        {
-          id: 'c1-1',
-          label: 'c1-1',
-        },
-        {
-          id: 'c1-2',
-          label: 'c1-2',
-          children: [
-            {
-              id: 'c1-2-1',
-              label: 'c1-2-1',
-            },
-            {
-              id: 'c1-2-2',
-              label: 'c1-2-2',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 'c2',
-      label: 'c2',
-    },
-    {
-      id: 'c3',
-      label: 'c3',
-      children: [
-        {
-          id: 'c3-1',
-          label: 'c3-1',
-        },
-        {
-          id: 'c3-2',
-          label: 'c3-2',
-          children: [
-            {
-              id: 'c3-2-1',
-              label: 'c3-2-1',
-            },
-            {
-              id: 'c3-2-2',
-              label: 'c3-2-2',
-            },
-            {
-              id: 'c3-2-3',
-              label: 'c3-2-3',
-            },
-          ],
-        },
-        {
-          id: 'c3-3',
-          label: 'c3-3',
-        },
-      ],
-    },
-  ],
-};
+// This file is added into index.html and will wait for user's action.
 
-G6.Util.traverseTree(data, (d) => {
-  d.leftIcon = {
-    style: {
-      fill: '#e6fffb',
-      stroke: '#e6fffb',
-    },
-    img: 'https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*Q_FQT6nwEC8AAAAAAAAAAABkARQnAQ',
-  };
-  return true;
-});
+// Each ast element has a unique number, each code element
+// has a unique number which arranged by ast number, e.g.:
+// code_1_20 means it point to ast_1 and ast_20.
+// code_5 only point to one ast element ast_5.
 
-G6.registerNode(
-  'icon-node',
-  {
-    options: {
-      size: [60, 20],
-      stroke: '#91d5ff',
-      fill: '#91d5ff',
-    },
-    draw(cfg, group) {
-      const styles = this.getShapeStyle(cfg);
-      const { labelCfg = {} } = cfg;
+var allLocation = new Array();
+var codeFocus = "";
+var astFocus = "";
+var locNum = 0;
+var regNumberOnly = /^\d+$/;
 
-      const keyShape = group.addShape('rect', {
-        attrs: {
-          ...styles,
-          x: 0,
-          y: 0,
-        },
-      });
-
-      /**
-       * leftIcon 格式如下：
-       *  {
-       *    style: ShapeStyle;
-       *    img: ''
-       *  }
-       */
-      console.log('cfg.leftIcon', cfg.leftIcon);
-      if (cfg.leftIcon) {
-        const { style, img } = cfg.leftIcon;
-        group.addShape('rect', {
-          attrs: {
-            x: 1,
-            y: 1,
-            width: 38,
-            height: styles.height - 2,
-            fill: '#8c8c8c',
-            ...style,
-          },
-        });
-
-        group.addShape('image', {
-          attrs: {
-            x: 8,
-            y: 8,
-            width: 24,
-            height: 24,
-            img:
-              img ||
-              'https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png',
-          },
-          name: 'image-shape',
-        });
+function traverseAST(ast, parentName) {
+  var patternName = null;
+  for (var key in ast) {
+    if (typeof(ast[key]) == 'string') {
+      if (key == "location") {
+        var loc = ast[key].split(":");
+        // location : "num1 : num2 : num3"
+        if (loc.length == 3 && regNumberOnly.test(loc[0]) &&
+            regNumberOnly.test(loc[1]) && regNumberOnly.test(loc[2])) {
+          var astName = "ast_" + locNum.toString();
+          allLocation.push( {rowStr :       loc[1],  columnStr :       loc[2],
+                             row : parseInt(loc[1]), column : parseInt(loc[2]),
+                             name : astName, astNum : locNum.toString(), parent : parentName} );
+          // Unique location number. We increase it by 1 after find a new location.
+          locNum++;
+        }
+      } else if (key == 'pattern') {
+        patternName = ast[key];
+        parentName = patternName;
+        delete ast[key];
       }
-
-      // 如果不需要动态增加或删除元素，则不需要 add 这两个 marker
-      group.addShape('marker', {
-        attrs: {
-          x: 40,
-          y: 52,
-          r: 6,
-          stroke: '#73d13d',
-          cursor: 'pointer',
-          symbol: EXPAND_ICON,
-        },
-        name: 'add-item',
-      });
-
-      group.addShape('marker', {
-        attrs: {
-          x: 80,
-          y: 52,
-          r: 6,
-          stroke: '#ff4d4f',
-          cursor: 'pointer',
-          symbol: COLLAPSE_ICON,
-        },
-        name: 'remove-item',
-      });
-
-      if (cfg.label) {
-        group.addShape('text', {
-          attrs: {
-            ...labelCfg.style,
-            text: cfg.label,
-            x: 50,
-            y: 25,
-          },
-        });
+    } else if (typeof(ast[key]) == 'object') {
+      var pName = key;
+      if (key == "record")
+        pName = parentName;
+      else if (regNumberOnly.test(key))
+        pName = parentName + '[' + key + ']';
+      var value = traverseAST(ast[key], pName);
+      // if key is "record", we want to strip it.
+      if (key == "record") {
+        // pattern: xxx,
+        // record: { ... }
+        // So the "pattern" has an equal level with "record", specially handle it.
+        // Here we rename the key "record" to the patternName:
+        // "pattern: xxx" : { ... }
+        if (patternName) {
+          patternName = "pattern: " + patternName;
+          ast[patternName] = value;
+          delete ast[key];
+          patternName = null;
+        } else {
+          // normal case:
+          // xxx: {
+          //   record: { ... }
+          // }
+          // after this assignment:
+          // xxx: { ... }
+          ast = value;
+        }
+      } else {
+        ast[key] = value;
       }
-
-      return keyShape;
-    },
-  },
-  'rect',
-);
-
-G6.registerEdge('flow-line', {
-  draw(cfg, group) {
-    const startPoint = cfg.startPoint;
-    const endPoint = cfg.endPoint;
-
-    const { style } = cfg;
-    const shape = group.addShape('path', {
-      attrs: {
-        stroke: style.stroke,
-        endArrow: style.endArrow,
-        path: [
-          ['M', startPoint.x, startPoint.y],
-          ['L', startPoint.x, (startPoint.y + endPoint.y) / 2],
-          ['L', endPoint.x, (startPoint.y + endPoint.y) / 2],
-          ['L', endPoint.x, endPoint.y],
-        ],
-      },
-    });
-
-    return shape;
-  },
-});
-
-const defaultStateStyles = {
-  hover: {
-    stroke: '#1890ff',
-    lineWidth: 2,
-  },
-};
-
-const defaultNodeStyle = {
-  fill: '#91d5ff',
-  stroke: '#40a9ff',
-  radius: 5,
-};
-
-const defaultEdgeStyle = {
-  stroke: '#91d5ff',
-  endArrow: {
-    path: 'M 0,0 L 12, 6 L 9,0 L 12, -6 Z',
-    fill: '#91d5ff',
-    d: -20,
-  },
-};
-
-const defaultLayout = {
-  type: 'compactBox',
-  direction: 'TB',
-  getId: function getId(d) {
-    return d.id;
-  },
-  getHeight: function getHeight() {
-    return 16;
-  },
-  getWidth: function getWidth() {
-    return 16;
-  },
-  getVGap: function getVGap() {
-    return 40;
-  },
-  getHGap: function getHGap() {
-    return 70;
-  },
-};
-
-const defaultLabelCfg = {
-  style: {
-    fill: '#000',
-    fontSize: 12,
-  },
-};
-
-const width = document.getElementById('container').scrollWidth;
-const height = document.getElementById('container').scrollHeight || 500;
-
-const minimap = new G6.Minimap({
-  size: [150, 100],
-});
-const graph = new G6.TreeGraph({
-  container: 'container',
-  width,
-  height,
-  linkCenter: true,
-  plugins: [minimap],
-  modes: {
-    default: ['drag-canvas', 'zoom-canvas'],
-  },
-  defaultNode: {
-    type: 'icon-node',
-    size: [120, 40],
-    style: defaultNodeStyle,
-    labelCfg: defaultLabelCfg,
-  },
-  defaultEdge: {
-    type: 'flow-line',
-    style: defaultEdgeStyle,
-  },
-  nodeStateStyles: defaultStateStyles,
-  edgeStateStyles: defaultStateStyles,
-  layout: defaultLayout,
-});
-
-graph.data(data);
-graph.render();
-graph.fitView();
-
-graph.on('node:mouseenter', (evt) => {
-  const { item } = evt;
-  graph.setItemState(item, 'hover', true);
-});
-
-graph.on('node:mouseleave', (evt) => {
-  const { item } = evt;
-  graph.setItemState(item, 'hover', false);
-});
-
-graph.on('node:click', (evt) => {
-  const { item, target } = evt;
-  const targetType = target.get('type');
-  const name = target.get('name');
-
-  // 增加元素
-  if (targetType === 'marker') {
-    const model = item.getModel();
-    if (name === 'add-item') {
-      if (!model.children) {
-        model.children = [];
-      }
-      const id = `n-${Math.random()}`;
-      model.children.push({
-        id,
-        label: id.substr(0, 8),
-        leftIcon: {
-          style: {
-            fill: '#e6fffb',
-            stroke: '#e6fffb',
-          },
-          img:
-            'https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*Q_FQT6nwEC8AAAAAAAAAAABkARQnAQ',
-        },
-      });
-      graph.updateChild(model, model.id);
-    } else if (name === 'remove-item') {
-      graph.removeChild(model.id);
     }
   }
-});
+  return ast;
+}
+
+// Remove all the '\n' and comments.
+function decomment(source) {
+  //                 /*  all-characters */ | \n
+  // Here the \s after [\s\S] is to handle recursive c-style comment:
+  // /* /*xxx*/ */
+  // The last */ always follow a space.
+  var re = new RegExp("^/\\*[\\s\\S]*?\\s\\*/|\\n", "gm");
+  return source.replace(re, "")
+}
+
+function combineAllJsonIntoArray(source) {
+  source = '[' + source + ']';
+  // Add ',' for all top-level json object.
+  var re = new RegExp("\}\{", "g");
+  return source.replace(re, "},{");
+}
+
+// Parse AST from json.
+function addASTTag(source) {
+  if (source) {
+    source = decomment(source);
+    source = combineAllJsonIntoArray(source);
+
+    var ast = JSON.parse(source);
+    var ret = traverseAST(ast, ""/*parent*/);
+    // Translate an original AST to render library format.
+    // astToChart(ret);
+  }
+}
+
+// Parse AST from json.
+function getASTTag(source) {
+  if (source) {
+    source = decomment(source);
+    source = combineAllJsonIntoArray(source);
+
+    var ast = JSON.parse(source);
+    var ret = traverseAST(ast, ""/*parent*/);
+    return ret;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function generateTreeNodesFromProperties(object) {
+  let node = {id:"", children:[]}
+  if (object == null ) {
+    return;
+  }
+
+  // For string property, just render as tree node
+  if (typeof object == 'string') {
+    node.id = object;
+    return node;
+  }
+
+  // For object with complex properties, get properties as childrens
+  for (const key of Object.keys(object)) {
+    if (object.hasOwnProperty(key)) {
+      const propertyValue = object[key];
+      if (Array.isArray(propertyValue)) {
+        for (const iterator of propertyValue) {
+          printPropertyRecusively(iterator);
+        }
+      } else {
+        console.log(propertyValue);
+        printPropertyRecusively(propertyValue);
+      }
+    }
+  }
+}
+function printPropertyRecusively(object) {
+  if (object == null) {
+    return;
+  }
+  if (typeof object == 'string') {
+    console.log(object);
+    return;
+  }
+  for (const key of Object.keys(object)) {
+    if (object.hasOwnProperty(key)) {
+      const propertyValue = object[key];
+      if (Array.isArray(propertyValue)) {
+        for (const iterator of propertyValue) {
+          printPropertyRecusively(iterator);
+        }
+      } else {
+        console.log(propertyValue);
+        printPropertyRecusively(propertyValue);
+      }
+    }
+  }
+}
+
+function  translateJSONObject(object){
+  console.log(JSON.stringify(object));
+  //printPropertyRecusively(object);
+  var ret = {
+    id: "Regression",
+    name: "Froda Bagins",
+    children: [
+      { id: "Multiple linear regression" },
+      { id: "Partial least squares" },
+      { id: "Multi-layer feedforward neural network" },
+      { id: "General regression neural network" },
+      { id: "Support vector regression" }
+    ]
+  }
+    return ret;
+}
+
+function getGraphData(data) {
+  const width = 800;
+  const height = 800;
+
+  const graph = new G6.TreeGraph({
+    container: 'container',
+    width,
+    height,
+    linkCenter: true,
+    modes: {
+      default: [
+        {
+          type: 'collapse-expand',
+          onChange: function onChange(item, collapsed) {
+            const data = item.get('model').data;
+            data.collapsed = collapsed;
+            return true;
+          },
+        },
+        'drag-canvas',
+        'zoom-canvas',
+      ],
+    },
+    defaultNode: {
+      size: 36,
+      anchorPoints: [
+        [0, 0.5],
+        [1, 0.5],
+      ],
+      style: {
+        fill: '#C6E5FF',
+        stroke: '#5B8FF9',
+      },
+    },
+    defaultEdge: {
+      type: 'cubic-vertical',
+      style: {
+        stroke: '#A3B1BF',
+      },
+    },
+    layout: {
+      type: 'compactBox',
+      direction: 'TB',
+      getId: function getId(d) {
+        return d.id;
+      },
+      getHeight: function getHeight() {
+        return 16;
+      },
+      getWidth: function getWidth() {
+        return 16;
+      },
+      getVGap: function getVGap() {
+        return 80;
+      },
+      getHGap: function getHGap() {
+        return 20;
+      },
+    },
+  });
+
+  graph.node(function (node) {
+    let position = 'right';
+    let rotate = 0;
+    if (!node.children) {
+      position = 'bottom';
+      rotate = Math.PI / 2;
+    }
+    return {
+      label: node.id,
+      labelCfg: {
+        position,
+        offset: 5,
+        style: {
+          rotate,
+          textAlign: 'start',
+        },
+      },
+    };
+  });
+
+  return graph;
+}
+
+fetch('t.json').then(response => response.text())
+  .then((ast_text) => {
+    //console.log(ast_text);
+    var json = getASTTag(ast_text);
+    // console.log(json);
+    var data = translateJSONObject(json);
+    var graph = getGraphData(data);
+    graph.data(data);
+    graph.render();
+    graph.fitView();
+
+}).catch(error=>{
+  console.error(error)
+})
+
+
+// fetch('https://gw.alipayobjects.com/os/antvdemo/assets/data/algorithm-category.json')
+//   .then((res) => res.json())
+//   .then((data) => {
+//     const width = document.getElementById('container').scrollWidth;
+//     const height = document.getElementById('container').scrollHeight || 1500;
+//     var graph = getGraphData(data);
+//     graph.data(data);
+//     graph.render();
+//     graph.fitView();
+//   });
